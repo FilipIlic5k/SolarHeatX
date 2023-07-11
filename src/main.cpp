@@ -8,7 +8,7 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PW;
 
-String FirmwareVer = { "1.1" };
+String FirmwareVer = { "1.2" };
 #define URL_fw_Version "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/bin_version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/firmware.bin"
 
@@ -21,7 +21,7 @@ int FirmwareVersionCheck();
 
 unsigned long previousMillis = 0; // will store last time LED was updated
 unsigned long previousMillis_2 = 0;
-const long interval = 60000;
+const long interval = 2000;
 const long mini_interval = 1000;
 void repeatedCall()
 {
@@ -150,6 +150,8 @@ int FirmwareVersionCheck(void)
             if (httpCode == HTTP_CODE_OK) // if version received
             {
                 payload = https.getString(); // save received version
+                Serial.println("Current firmware version:");
+                Serial.print(payload);
             } else {
                 Serial.print("error in downloading version file:");
                 Serial.println(httpCode);
