@@ -8,7 +8,7 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PW;
 
-String FirmwareVer = { "1.2" };
+String FirmwareVer = { "1.3" };
 #define URL_fw_Version "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/bin_version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/firmware.bin"
 
@@ -121,6 +121,9 @@ void firmwareUpdate(void)
 
     case HTTP_UPDATE_OK:
         Serial.println("HTTP_UPDATE_OK");
+        break;
+    default:
+        Serial.println("ERROR");
         break;
     }
 }
