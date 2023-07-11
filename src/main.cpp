@@ -8,7 +8,7 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PW;
 
-String FirmwareVer = { "1.0" };
+String FirmwareVer = { "1.1" };
 #define URL_fw_Version "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/bin_version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/FilipIlic5k/SolarHeatX/main/src/firmware.bin"
 
